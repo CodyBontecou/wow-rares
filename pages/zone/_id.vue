@@ -31,17 +31,14 @@
           </v-layout>
         </v-img>
       </v-flex>
-      <v-flex x12 md3>
+      <v-flex xs12 md3>
         <v-container>
-          <v-expansion-panels>
+          <v-expansion-panels v-model="panel" multiple>
             <v-expansion-panel v-for="(mob, index) in mobs" :key="index" expand>
               <v-expansion-panel-header>
                 {{ mob.name }}
               </v-expansion-panel-header>
-              <v-expansion-panel-content
-                v-show="mob.active"
-                v-model="mob.active"
-              >
+              <v-expansion-panel-content v-show="mob.active">
                 <v-card flat>
                   <v-layout row wrap class="project">
                     <v-flex xs6 align-self-center>
@@ -77,7 +74,8 @@ export default {
   data() {
     return {
       dataReady: false,
-      show: false
+      show: false,
+      panel: []
     }
   },
   computed: {
@@ -123,9 +121,11 @@ export default {
       this.$store.commit('changeActive')
     },
     activateMob(index) {
+      this.panel.push(index)
       this.$store.commit('activateMob', index)
     },
     deactivateMob(index) {
+      this.panel = []
       this.$store.commit('deactivateMob', index)
     },
     hoverItem(item) {
