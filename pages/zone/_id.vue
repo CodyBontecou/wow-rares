@@ -24,6 +24,8 @@
                     position: 'absolute'
                   }"
                   @click="activateMob(index)"
+                  @mouseover="changeCursorToPoint()"
+                  @mouseleave="changeCursorToDefault()"
                 >
                 </v-img>
               </div>
@@ -130,6 +132,12 @@ export default {
     },
     hoverItem(item) {
       console.log(item.name)
+    },
+    changeCursorToPoint() {
+      document.body.style.cursor = 'pointer'
+    },
+    changeCursorToDefault() {
+      document.body.style.cursor = 'default'
     }
   }
 }
