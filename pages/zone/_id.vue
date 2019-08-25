@@ -11,10 +11,11 @@
           <v-layout column fill-height class="lightbox white--text">
             <v-flex shrink>
               <div v-for="(mob, index) in mobs" :key="index">
+<!--                TODO: Dynamically load image name into alt tag -->
                 <v-img
                   v-model="mob.active"
                   src="https://classicdb.ch/templates/wowhead/images/map-pin-yellow.png"
-                  alt=""
+                  alt="Image of mob"
                   height="11px"
                   width="11px"
                   :style="{
@@ -22,8 +23,7 @@
                     left: mob.x_coordinate + '%',
                     position: 'absolute'
                   }"
-                  @mouseover="activateMob(index)"
-                  @mouseleave="deactivateMob(index)"
+                  @click="activateMob(index)"
                 >
                 </v-img>
               </div>

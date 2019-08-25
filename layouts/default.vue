@@ -37,7 +37,7 @@
         </v-toolbar-title>
       </nuxt-link>
       <v-toolbar-items>
-        <v-btn text disabled class="font-weight-light">{{ zone.name }}</v-btn>
+        <v-btn text disabled class="font-weight-light hidden-sm-and-down">{{ zone.name }}</v-btn>
       </v-toolbar-items>
       <v-spacer />
       <a
@@ -107,7 +107,7 @@ export default {
   data() {
     return {
       clipped: false,
-      drawer: true,
+      drawer: false,
       fixed: false,
       miniVariant: false,
       title: 'WoWRares'
