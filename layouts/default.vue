@@ -50,7 +50,7 @@
         href="https://www.patreon.com/wowrares"
         target="_blank"
       >
-        $
+        ｡◕‿‿◕｡
       </v-btn>
     </v-app-bar>
     <v-content>
