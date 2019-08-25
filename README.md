@@ -1,6 +1,9 @@
 # wow-rares
 
-> My cat&#39;s pajamas Nuxt.js project
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6a212c35-b3c1-48e4-92c8-ae29960c8ec6/deploy-status)](https://app.netlify.com/sites/wowrares/deploys)
+
+
+> Site is being hosted at wowrares.com
 
 ## Build Setup
 

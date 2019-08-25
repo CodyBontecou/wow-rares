@@ -40,18 +40,15 @@
         <v-btn text disabled class="font-weight-light hidden-sm-and-down">{{ zone.name }}</v-btn>
       </v-toolbar-items>
       <v-spacer />
-      <a
-        href="https://www.patreon.com/bePatron?u=20293765"
-        data-patreon-widget-type="become-patron-button"
-        >Become a Patron!</a
+      <v-btn
+        rounded
+        light
+        class="orange darken-3"
+        href="https://www.patreon.com/wowrares"
+        target="_blank"
       >
-      <script
-        async
-        src="https://c6.patreon.com/becomePatronButton.bundle.js"
-      ></script>
-      <!--      <v-btn icon @click.stop="rightDrawer = !rightDrawer">-->
-      <!--        <v-icon>mdi-menu</v-icon>-->
-      <!--      </v-btn>-->
+        $
+      </v-btn>
     </v-app-bar>
     <v-content>
       <v-container>
