@@ -22,7 +22,12 @@
             ></v-img>
           </v-list-item-avatar>
           <v-list-item-content>
-            <nuxt-link :to="{ name: 'zone-id', params: { id: zone.name } }">
+            <nuxt-link
+              :to="{
+                name: 'zone-id',
+                params: { id: zone.name.toLowerCase().replace(' ', '-') + '/' }
+              }"
+            >
               <v-list-item-title class="grey--text subtitle-2">
                 {{ zone.name }}
               </v-list-item-title>
@@ -40,7 +45,9 @@
         </v-toolbar-title>
       </nuxt-link>
       <v-toolbar-items>
-        <v-btn text disabled class="font-weight-light hidden-sm-and-down">{{ zone.name }}</v-btn>
+        <v-btn text disabled class="font-weight-light hidden-sm-and-down">{{
+          zone.name
+        }}</v-btn>
       </v-toolbar-items>
       <v-spacer />
       <v-btn
@@ -89,7 +96,6 @@
         <v-icon color="grey lighten-1">chat</v-icon>
       </v-btn>
     </v-footer>
-    <!--    TODO: Style background to be dark. Move to right side of screen. -->
     <v-btn
       icon
       fab

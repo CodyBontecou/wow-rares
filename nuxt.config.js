@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -8,7 +8,9 @@ export default {
       return axios
         .get(`https://wowrares-api.herokuapp.com/api/v1/zones`)
         .then((response) => {
-          return response.data.map((zone) => `zone/${zone.name}`)
+          return response.data.map(
+            (zone) => `zone/${zone.name.toLowerCase().replace(/ /g, '-')}/`
+          )
         })
     }
   },
@@ -64,6 +66,12 @@ export default {
   axios: {
     baseURL: 'https://wowrares-api.herokuapp.com/api/v1/'
   },
+  redirect: [
+    {
+      from: '^.*(?<!\/)$',
+      to: (from, req) => req.url + '/'
+    }
+  ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
