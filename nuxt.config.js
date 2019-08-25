@@ -1,7 +1,17 @@
+import axios from 'axios';
 import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'universal',
+  generate: {
+    routes() {
+      return axios
+        .get(`https://wowrares-api.herokuapp.com/api/v1/zones`)
+        .then((response) => {
+          return response.data.map((zone) => `zone/${zone.name}`)
+        })
+    }
+  },
   /*
    ** Headers of the page
    */
