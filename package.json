@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My cat&#39;s pajamas Nuxt.js project",
   "author": "Cody Bontecou",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
