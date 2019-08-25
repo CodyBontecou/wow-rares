@@ -8,7 +8,7 @@
           <!--              active_mob.health-->
           <!--            }}-->
           <!--          </div>-->
-          <v-layout column fill-height class="lightbox white--text">
+          <v-layout column fill-height class="lightbox grey--text">
             <v-flex shrink>
               <div v-for="(mob, index) in mobs" :key="index">
 <!--                TODO: Dynamically load image name into alt tag -->
@@ -37,7 +37,7 @@
         <v-container>
           <v-expansion-panels v-model="panel" multiple>
             <v-expansion-panel v-for="(mob, index) in mobs" :key="index" expand>
-              <v-expansion-panel-header>
+              <v-expansion-panel-header class="grey--text">
                 {{ mob.name }}
               </v-expansion-panel-header>
               <v-expansion-panel-content v-show="mob.active">

@@ -140,4 +140,13 @@ header {
 .theme--dark.v-navigation-drawer {
   background-color: #212121 !important;
 }
+.v-expansion-panel-header {
+  background-color: #212121 !important;
+}
+.v-expansion-panel-content {
+  background-color: #212121 !important;
+}
+.v-card.v-card--flat.v-sheet.theme--dark {
+  background-color: #212121 !important;
+}
 </style>
