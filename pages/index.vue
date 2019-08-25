@@ -24,7 +24,7 @@
           <v-card-title primary class="title font-weight-light grey--text"
             >Navigate</v-card-title
           >
-          <v-img src="nav-cropped.png"></v-img>
+          <v-img src="nav-cropped.png" alt="Site navigation preview"></v-img>
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 md4>
@@ -32,7 +32,7 @@
           <v-card-title primary class="title font-weight-light grey--text"
             >Locate</v-card-title
           >
-          <v-img src="timber-only-map.png"></v-img>
+          <v-img src="timber-only-map.png" alt="Locate rare mobs using these maps"></v-img>
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 md4>
@@ -40,7 +40,7 @@
           <v-card-title class="title font-weight-light grey--text"
             >Loot</v-card-title
           >
-          <v-img src="timber-3.png"></v-img>
+          <v-img src="timber-3.png" alt="Rare mob Timber being looted"></v-img>
         </v-card>
       </v-flex>
     </v-layout>

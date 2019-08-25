@@ -16,7 +16,10 @@
           @click="mobsInfo(zone)"
         >
           <v-list-item-avatar>
-            <v-img :src="zone.image"></v-img>
+            <v-img
+              :src="zone.image"
+              :alt="'Small avatar images of ' + zone.name"
+            ></v-img>
           </v-list-item-avatar>
           <v-list-item-content>
             <nuxt-link :to="{ name: 'zone-id', params: { id: zone.name } }">
