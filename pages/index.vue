@@ -8,14 +8,6 @@
           <span class="font-weight-light">Wow</span>
           <span>rares</span>
         </p>
-        <v-form ref="form">
-          <v-text-field
-            solo
-            label="Zone name..."
-            append-icon="search"
-            required
-          ></v-text-field>
-        </v-form>
       </v-flex>
     </v-layout>
     <v-layout align-top justify-center row fill-height>
