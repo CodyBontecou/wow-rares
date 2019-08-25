@@ -5,10 +5,10 @@ export default {
   mode: 'universal',
 
   generate: {
-    async routes() {
-      const response = await axios.get('http://127.0.0.1:8008/api/v1/zones')
-      return response.data.map((zone) => `zone/${zone.name}`)
-    }
+    // async routes() {
+    //   const response = await axios.get('http://127.0.0.1:8008/api/v1/zones')
+    //   return response.data.map((zone) => `zone/${zone.name}`)
+    // }
   },
   /*
    ** Headers of the page
