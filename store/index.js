@@ -46,11 +46,11 @@ export const state = () => ({
 
 export const actions = {
   async fetchAllZones({ commit }) {
-    const zones = await this.$axios.$get(`zones`)
+    const zones = await this.$axios.$get(`zones/`)
     commit('setZones', zones)
   },
   async fetchMobs({ commit }, zone) {
-    const mobs = await this.$axios.$get(`mobs/?zone__name=${zone.name}`)
+    const mobs = await this.$axios.$get(`mobs/?zone__name=${zone.name}/`)
     commit('setMobs', mobs)
   }
 }

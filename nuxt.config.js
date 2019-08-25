@@ -1,14 +1,9 @@
-import axios from 'axios'
 import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'universal',
 
   generate: {
-    // async routes() {
-    //   const response = await axios.get('http://127.0.0.1:8008/api/v1/zones')
-    //   return response.data.map((zone) => `zone/${zone.name}`)
-    // }
   },
   /*
    ** Headers of the page
@@ -60,8 +55,7 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   axios: {
-    baseURL: 'https://wowrares-api.herokuapp.com/api/v1/',
-    // baseURL: 'http://127.0.0.1:8008/api/v1/'
+    baseURL: 'https://wowrares-api.herokuapp.com/api/v1/'
   },
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
