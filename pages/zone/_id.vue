@@ -3,19 +3,13 @@
     <v-layout row wrap class="pa-3 project">
       <v-flex v-if="zone" xs12 md9>
         <v-img :src="zone.image" :alt="'Map of ' + zone.name">
-          <!--          <div v-show="map_stats">-->
-          <!--            {{ active_mob.name }}<br />{{ active_mob.level }}<br />{{-->
-          <!--              active_mob.health-->
-          <!--            }}-->
-          <!--          </div>-->
           <v-layout column fill-height class="lightbox grey--text">
             <v-flex shrink>
               <div v-for="(mob, index) in mobs" :key="index">
-<!--                TODO: Dynamically load image name into alt tag -->
                 <v-img
                   v-model="mob.active"
                   src="https://classicdb.ch/templates/wowhead/images/map-pin-yellow.png"
-                  alt="Image of mob"
+                  :alt="'Location of ' + mob.name"
                   height="11px"
                   width="11px"
                   :style="{
@@ -44,7 +38,7 @@
                 <v-card flat>
                   <v-layout row wrap class="project">
                     <v-flex xs6 align-self-center>
-                      <v-img :src="`${mob.image}`" alt=""></v-img>
+                      <v-img :src="`${mob.image}`" :alt="'Image of ' + mob.name"></v-img>
                     </v-flex>
                     <v-flex xs6>
                       <v-flex align-self-center>
