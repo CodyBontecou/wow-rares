@@ -46,16 +46,3 @@
     </v-layout>
   </v-container>
 </template>
-
-<script>
-export default {
-  computed: {
-    zones() {
-      return this.$store.state.zones
-    }
-  },
-  async fetch({ store }) {
-    await store.dispatch('fetchAllZones')
-  }
-}
-</script>

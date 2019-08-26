@@ -1,6 +1,10 @@
 export const state = () => ({
   active: false,
-  zone: '',
+  zone: {
+    id: '',
+    name: '',
+    image: ''
+  },
   zones: [],
   mob: { name: '' },
   mobs: [],
@@ -45,13 +49,17 @@ export const state = () => ({
 })
 
 export const actions = {
-  async fetchAllZones({ commit }) {
+  async nuxtServerInit({ commit }) {
     const zones = await this.$axios.$get(`zones`)
     commit('setZones', zones)
   },
   async fetchMobs({ commit }, zone) {
-    const mobs = await this.$axios.$get(`mobs/?zone__name=${zone.name}`)
+    const mobs = await this.$axios.$get(`mobs/?zone__name=${zone}`)
     commit('setMobs', mobs)
+  },
+  async fetchZone({ commit }, zone) {
+    const z = await this.$axios.$get(`zones/?name=${zone}`)
+    commit('setZone', z)
   }
 }
 

@@ -38,7 +38,10 @@
                 <v-card flat>
                   <v-layout row wrap class="project">
                     <v-flex xs6 align-self-center>
-                      <v-img :src="`${mob.image}`" :alt="'Image of ' + mob.name"></v-img>
+                      <v-img
+                        :src="`${mob.image}`"
+                        :alt="'Image of ' + mob.name"
+                      ></v-img>
                     </v-flex>
                     <v-flex xs6>
                       <v-flex align-self-center>
@@ -79,7 +82,7 @@ export default {
       return this.$store.state.active
     },
     zone() {
-      return this.$store.state.zone
+      return this.$store.state.zone[0]
     },
     zones() {
       return this.$store.state.zones
@@ -94,28 +97,14 @@ export default {
       return this.$store.state.items
     }
   },
-  async fetch({ store }) {
-    await store.dispatch('fetchAllZones')
+  async fetch({ store, params }) {
+    await store.dispatch('fetchZone', params.id)
+    await store.dispatch('fetchMobs', params.id)
   },
-  mounted() {
-    const fullPath = this.$route.fullPath
-    const zone = fullPath.substring(fullPath.lastIndexOf('/') + 1)
-    // this.mobsInfo(zone)
-    // this.dataReady = true
-  },
+  // mounted() {
+  //   console.log(this.$route)
+  // },
   methods: {
-    async mobsInfo(zone) {
-      this.$store.commit('setZone', zone)
-      await this.$store.dispatch('fetchMobs', zone)
-    },
-    mouseOver(mob) {
-      this.$store.commit('activateMob', mob)
-      this.$store.commit('changeActive')
-    },
-    mouseOff(mob) {
-      this.$store.commit('activateMob', mob)
-      this.$store.commit('changeActive')
-    },
     activateMob(index) {
       this.panel.push(index)
       this.$store.commit('activateMob', index)
@@ -123,9 +112,6 @@ export default {
     deactivateMob(index) {
       this.panel = []
       this.$store.commit('deactivateMob', index)
-    },
-    hoverItem(item) {
-      console.log(item.name)
     },
     changeCursorToPoint() {
       document.body.style.cursor = 'pointer'
