@@ -20,7 +20,7 @@
               :to="{
                 name: 'zone-id',
                 params: {
-                  id: zone.name
+                  id: zone.name.toLowerCase()
                 }
               }"
             >
