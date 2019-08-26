@@ -8,12 +8,7 @@
       :floating="true"
     >
       <v-list dense nav>
-        <v-list-item
-          v-for="(zone, index) in zones"
-          :key="index"
-          nuxt
-          link
-        >
+        <v-list-item v-for="(zone, index) in zones" :key="index" nuxt link>
           <v-list-item-avatar>
             <v-img
               :src="zone.image"
@@ -57,6 +52,7 @@
         class="orange darken-3"
         href="https://www.patreon.com/wowrares"
         target="_blank"
+        rel="noreferrer"
       >
         ｡◕‿‿◕｡
       </v-btn>
@@ -93,7 +89,12 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon href="https://twitter.com/wowrares_dev" target="_blank">
+      <v-btn
+        icon
+        href="https://twitter.com/wowrares_dev"
+        target="_blank"
+        rel="noreferrer"
+      >
         <v-icon color="grey lighten-1">chat</v-icon>
       </v-btn>
     </v-footer>
@@ -103,6 +104,7 @@
       href="https://twitter.com/wowrares_dev"
       target="_blank"
       class="hidden-md-and-up"
+      rel="noreferrer"
     >
       <v-icon color="grey lighten-1">chat</v-icon>
     </v-btn>
