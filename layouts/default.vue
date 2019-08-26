@@ -13,7 +13,6 @@
           :key="index"
           nuxt
           link
-          @click="mobsInfo(zone)"
         >
           <v-list-item-avatar>
             <v-img
@@ -25,7 +24,9 @@
             <nuxt-link
               :to="{
                 name: 'zone-id',
-                params: { id: zone.name.toLowerCase().replace(' ', '-') + '/' }
+                params: {
+                  id: zone.name
+                }
               }"
             >
               <v-list-item-title class="grey--text subtitle-2">
@@ -125,12 +126,6 @@ export default {
     },
     zones() {
       return this.$store.state.zones
-    }
-  },
-  methods: {
-    async mobsInfo(zone) {
-      this.$store.commit('setZone', zone)
-      await this.$store.dispatch('fetchMobs', zone)
     }
   }
 }

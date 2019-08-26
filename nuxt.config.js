@@ -8,9 +8,7 @@ export default {
       return axios
         .get(`https://wowrares-api.herokuapp.com/api/v1/zones`)
         .then((response) => {
-          return response.data.map(
-            (zone) => `zone/${zone.name.toLowerCase().replace(/ /g, '-')}/`
-          )
+          return response.data.map((zone) => `zone/${zone.name}/`)
         })
     }
   },
@@ -66,12 +64,6 @@ export default {
   axios: {
     baseURL: 'https://wowrares-api.herokuapp.com/api/v1/'
   },
-  redirect: [
-    {
-      from: '^.*(?<!\/)$',
-      to: (from, req) => req.url + '/'
-    }
-  ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
