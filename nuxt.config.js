@@ -57,7 +57,12 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-4497471902095112'
+    }]
+  ],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
